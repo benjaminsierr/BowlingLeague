@@ -14,7 +14,6 @@
         <h1 class="display-4">@Model.TeamName</h1>
     }
 
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 @*
     Create an app that displays a contact list for all the bowlers in the league: First Name, Middle
@@ -35,6 +34,7 @@
         </tr>
     </thead>
     <tbody>
+        @*list out bowlers*@
         @foreach (var x in Model.Bowlers)
         {
         <tr>
@@ -51,7 +51,8 @@
 
     </tbody>
 </table>
+@*pagination*@
 <div page-info="@Model.PageNumberingInfo"
      page-url-team="@Model.TeamName" page-classes-enabled="true" page-class="btn m-1"
      page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary" page-url-category="@Model.PageNumberingInfo.CurrentPage"></div>
+     page-class-selected="btn-primary" page-url-pagenum="@Model.PageNumberingInfo.CurrentPage"></div>

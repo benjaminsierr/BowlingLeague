@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace BowlingLeague.Models
 {
+    //store information on page numbering
     public class PageNumberingInfo
     {
 

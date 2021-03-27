@@ -14,20 +14,22 @@ namespace BowlingLeague.Controllers
 {
     public class HomeController : Controller
     {
+        //set variables
         private readonly ILogger<HomeController> _logger;
         private BowlingLeagueContext context { get; set; }
-
+        //constructor
         public HomeController(ILogger<HomeController> logger, BowlingLeagueContext con)
         {
             _logger = logger;
             context = con;
         }
-
+        //index action - brings in team id, team name, and page number
         public IActionResult Index(long? teamid, string team, int pagenum = 1)
         {
             int pagesize = 5;
             return View(new IndexViewModel
             {
+                //get bowlers for specified page
                 Bowlers = context.Bowlers
                     .Where(x => x.TeamId == teamid || teamid == null)
                     .OrderBy(x => x.BowlerLastName)
