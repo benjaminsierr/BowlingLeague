@@ -23,7 +23,7 @@ namespace BowlingLeague.Controllers
             context = con;
         }
 
-        public IActionResult Index(long? teamid, string team, int pagenum = 0)
+        public IActionResult Index(long? teamid, string team, int pagenum = 1)
         {
             int pagesize = 5;
             return View(new IndexViewModel

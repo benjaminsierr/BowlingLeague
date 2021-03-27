@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<Team>
     <li class="nav-item">
-        <a class="nav-link @(ViewBag.SelectedTeam == null ? "text-primary" : "text-dark")" asp-action="Index" asp-controller="Home" asp-route-team="">Home</a>
+        <a class="nav-link @(ViewBag.SelectedTeam == null ? "text-primary" : "text-dark")" asp-action="Index" asp-controller="Home" asp-route-team="" asp-route-pagenum="1">Home</a>
     </li>
     @foreach (var x in Model)
     {
     <li class="nav-item">
         <a class="nav-link @(x.TeamName == ViewBag.SelectedTeam ? "text-primary" : "text-dark")" asp-action="Index" asp-controller="Home"
         asp-route-teamid=@x.TeamId
-        asp-route-team=@x.TeamName>@x.TeamName</a>
+        asp-route-team=@x.TeamName
+           asp-route-pagenum="1">@x.TeamName</a>
     </li>
         
     }
