@@ -16,6 +16,7 @@ namespace BowlingLeague.Views.Components
         }
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedTeam = RouteData?.Values["Team"];
             return View(context.Teams
                 .Distinct()
                 .OrderBy(x => x));

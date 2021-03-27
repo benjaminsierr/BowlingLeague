@@ -5,7 +5,15 @@
 @model IndexViewModel
 
 <div class="text-center">
-    <h1 class="display-4">All Bowlers</h1>
+    @if (Model.TeamName == null)
+    {
+        <h1 class="display-4">All Bowlers</h1>
+    }
+    else
+    {
+        <h1 class="display-4">@Model.TeamName</h1>
+    }
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 @*
